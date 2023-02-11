@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet" href="/static/styles/index.css">
+  <link rel="stylesheet" href="/static/styles/login.css">
+  <script defer src="/static/scripts/login.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+</head> 
+<body>
+<header>
+  <div id="header_logo"><img src="" alt="">공감창고</div>
+  <nav>
+    <ul id="navibar">
+      <li><a href="#">음악창구</a></li>
+      <li><a href="#" id="mideoArea">영상창구</a></li>
+      <div id="login_sidebar_box">
+        <input type="checkbox" id="login_sidebar">
+        <label for="login_sidebar" class="login_sidebarbtn"><span>로그인</span></label>
+        <div id="sidebar" class="sidebar">
+          <p>Welcome <br> to <span id="sidebar_logotxt">공감창구</span> </p>
+          <div id="login_box">
+            <input required id="login_box_id" type="text"  placeholder="아이디를 입력해주세요.">
+            <input required id="login_box_pw" type="password" placeholder="비밀번호를 입력해주세요.">
+            <button id="login_box_btn" onclick="login()"> 로그인</button>
+            <button id="login_singup" onclick="login_singup()">회원가입</button>
+          </div>
+        </div>
+      </div>
+    </ul>
+  </nav>
+</header>
+
+
+<footer>
+<span>Copyright @ 2023</span><span style="color:white">-</span>
+<input type="checkbox" id="footer_easteregg">
+<label for="footer_easteregg" class="login_sidebarbtn"><span style="color:brown"> 진식님 없는 진식팀 </span></label>
+<div class="sidebar2" style="color: white;"></div>
+<span style="color:white">-</span>
+<span>All Rights Reserved.</span>
+</footer>
+</body>
+</html>
