@@ -20,6 +20,14 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: 'Cafe24ClassicType-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Cafe24ClassicType-Regular.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+
+
 /* fontPart, end */
 
 /* headerPart, start */
@@ -97,6 +105,17 @@ article[id="indexHtmlmg"] {
   grid-template-columns: 1fr 2fr;
   height: 800px;
 }
+
+article[id="indexHtmlmg"] div:nth-child(2) {
+  padding-top: 100px;
+  padding-left: 80px;
+  font-family: 'Cafe24ClassicType-Regular';
+  font-size: 50px;
+  transform: rotate( 10deg );
+  line-height: 120px;
+  transition: all .35s;
+}
+
 
 article[id="indexHtmlmg"] img { height: 100%;}
 
@@ -177,3 +196,85 @@ footer {
 
 
 /* footerPart, end */
+
+@media(max-width:1110px) {
+  article[id="indexHtmlmg"] div:nth-child(2) {
+    font-size: 30px;
+    line-height: 100px;
+    transition: all .35s;
+  	}
+    article[id="indexHtmlmg"] div:nth-child(1) {
+      transition: all .35s;
+      height: 85%;
+    }
+  }
+
+@media(max-width:900px) {
+  article[id="indexHtmlmg"] div:nth-child(2) {
+    font-size: 20px;
+    line-height: 90px;
+    transition: all .35s;
+  }
+  article[id="indexHtmlmg"] div:nth-child(1) {
+    transition: all .35s;
+    height: 70%;
+  }
+}
+
+@media(max-width:800px) {
+  article[id="indexHtmlmg"] {
+    margin-top: -100px;
+    display: block;
+  }
+  article[id="indexHtmlmg"] div:nth-child(1) {
+    height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  article[id="indexHtmlmg"] div:nth-child(2) {
+    font-size: 35px;
+    padding-top: 0;
+    padding-left: 100px;
+    transform: rotate(0);
+    line-height: 70px;
+  }
+
+}
+
+@media(max-width:600px) {
+  article[id="indexHtmlmg"] {
+    display: block;
+  }
+  article[id="indexHtmlmg"] div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  article[id="indexHtmlmg"] div:nth-child(2) {
+    font-size: 30px;
+    padding-top: 0;
+    padding-left: 100px;
+  }
+
+}
+
+
+@media(max-width:400px) {
+  article[id="indexHtmlmg"] {
+    display: block;
+  }
+  article[id="indexHtmlmg"] div:nth-child(1) {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  article[id="indexHtmlmg"] div:nth-child(2) {
+    padding-top: 0;
+    padding-left: 40px;
+  }
+
+}
