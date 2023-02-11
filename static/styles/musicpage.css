@@ -1,94 +1,96 @@
 @font-face {
-    font-family: 'IBMPlexSansKR-Regular';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff') format('woff');
-    font-weight: normal;
-    font-style: normal;
+  font-family: 'IBMPlexSansKR-Regular';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_20-07@1.0/IBMPlexSansKR-Regular.woff')
+    format('woff');
+  font-weight: normal;
+  font-style: normal;
 }
 
 @font-face {
-    font-family: 'PyeongChangPeace-Bold';
-    src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
-    font-weight: 700;
-    font-style: normal;
+  font-family: 'PyeongChangPeace-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2')
+    format('woff2');
+  font-weight: 700;
+  font-style: normal;
 }
 
 #musicpageArticle {
-    font-family: 'IBMPlexSansKR-Regular';
-    font-size: larger;
+  font-family: 'IBMPlexSansKR-Regular';
+  font-size: larger;
 
-    width: auto;
-    height: auto;
-    /* background-color: antiquewhite; */
-    display: flex;
-    flex-direction: column;
+  width: auto;
+  height: auto;
+  /* background-color: antiquewhite; */
+  display: flex;
+  flex-direction: column;
 }
 
 #musicListTitle {
-    text-align: center;
-    font-family: 'PyeongChangPeace-Bold';
-    font-size: 40px;
-    margin-bottom: 10px;
+  text-align: center;
+  font-family: 'PyeongChangPeace-Bold';
+  font-size: 40px;
+  margin-bottom: 10px;
 }
 
 #musicBox {
-    width: auto;
-    height: auto;
-    /* background-color: lightpink; */
-    
-    display: flex;
-    flex-direction: column;
-    margin-bottom: 30px;
+  width: auto;
+  height: auto;
+  /* background-color: lightpink; */
+
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 30px;
 }
 
 #musicList {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    margin-top: 15px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  margin-top: 15px;
 }
 
 #musicListData {
-    font-size: 15px;
-    display: grid;
-    grid-template-columns: 1fr;
-    margin-top: 10px;
+  font-size: 15px;
+  display: grid;
+  grid-template-columns: 1fr;
+  margin-top: 10px;
 }
 
 #musicHtml {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    text-align: center;
-    margin-top: 10px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  text-align: center;
+  margin-top: 10px;
 }
 
 #commentBox {
-    width: auto;
-    height: auto;
-    /* background-color: rgba(128, 128, 128, 0.419); */
+  width: auto;
+  height: auto;
+  /* background-color: rgba(128, 128, 128, 0.419); */
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 #commentTitle {
-    font-family: 'PyeongChangPeace-Bold';
-    font-size: 40px;
-    text-align: center;
-    margin: 50px 0px 30px 0px;
+  font-family: 'PyeongChangPeace-Bold';
+  font-size: 40px;
+  text-align: center;
+  margin: 50px 0px 30px 0px;
 }
 #commentContents {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
 #commentInfo {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
 }
 
 #commentLeft {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
 }
