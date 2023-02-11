@@ -24,7 +24,7 @@
 <article id="musicpageArticle">
 <!-- Music List -->
     <div id="musicBox">
-        <div>Music List</div>
+        <div id="musicListTitle">Music List</div>
         <div id="musicList">
             <div id="ranking">순위</div>
             <div id="singer">가수</div>
@@ -35,22 +35,23 @@
 
 <!-- Comment -->
     <div id="commentBox">
-        <div>Comment</div>
+        <div id="commentTitle">Comment</div>
         <div id="commentContents">
             <div id="commentInfo">
                 <div id="commentLeft">
                     <div>닉네임</div>
                     <div>날짜</div>
+                    <div>music title</div>
                 </div>
                 <form>
-                    <div>
-                        <div>music title</div>
+                    <div id="commentInput">
                         <textarea name="" id="comment" cols="100" rows="5" placeholder="댓글을 달아보세요!"></textarea>
                         <button onclick="save_comment()" type="button" class="btn btn-outline-primary">댓글달기</button>
                     </div>
                 </form>
             </div>
         </div>
+        
 
         <!-- GET -READ -->
         <div class="mycommentcards" id="comment-list">
