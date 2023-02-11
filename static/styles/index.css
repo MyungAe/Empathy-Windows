@@ -91,6 +91,15 @@ header {
   /* sidebarPart, end */    
 /* headerPart, end */
 
+article[id="indexHtmlmg"] {
+  padding-top: 150px;
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  height: 800px;
+}
+
+article[id="indexHtmlmg"] img { height: 100%;}
+
 
 /* footerPart, star */
 footer {
