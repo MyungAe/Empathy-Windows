@@ -5,6 +5,15 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'PyeongChangPeace-Bold';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2206-02@1.0/PyeongChangPeace-Bold.woff2') format('woff2');
+  font-weight: 300;
+  font-style: normal;
+}
+
+
 /* fontPart, end */
 
 /* headerPart, start */
@@ -25,7 +34,8 @@ header {
       div[id="header_logo"] {
         margin-left: 30px;
         color: brown;
-        font-weight: 700;
+        /* font-weight: 700; */
+        font-family: 'PyeongChangPeace-Bold';
       }
 
       ul[id="navibar"] {
@@ -67,6 +77,11 @@ header {
       /* input[id="login_sidebar"]:checked +label span {color: black;} */
       div[class="sidebar"] {width: 300px;height: 100%;background: #222;position: fixed;top: 0;right:-300px;z-index: 1;transition: all .35s; display: flex; flex-direction: column;align-items: center; padding-top: 50px;}
       input[id="login_sidebar"]:checked + label + div {right: 0;}
+      span[id="sidebar_logotxt"] {
+        font-family: 'PyeongChangPeace-Bold';
+        color: brown;
+      }
+
   /* sidebarPart, end */    
 /* headerPart, end */
 
