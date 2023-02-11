@@ -1,60 +1,216 @@
 <!DOCTYPE html>
 <html lang="ko">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  <link rel="stylesheet" href="/static/styles/index.css">
-  <link rel="stylesheet" href="/static/styles/login.css">
-  <script defer src="/static/scripts/login.js"></script>
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
-</head> 
-<body>
-<header>
-  <div id="header_logo"><img src="" alt="">공감창고</div>
-  <nav>
-    <ul id="navibar">
-      <li><a href="#">음악창구</a></li>
-      <li><a href="#" id="mideoArea">영상창구</a></li>
-      <div id="login_sidebar_box">
-        <input type="checkbox" id="login_sidebar">
-        <label for="login_sidebar" class="login_sidebarbtn"><span>로그인</span></label>
-        <div id="sidebar" class="sidebar">
-          <p>Welcome <br> to <span id="sidebar_logotxt">공감창구</span> </p>
-          <div id="login_box">
-            <input required id="login_box_id" type="text"  placeholder="아이디를 입력해주세요.">
-            <input required id="login_box_pw" type="password" placeholder="비밀번호를 입력해주세요.">
-            <button id="login_box_btn" onclick="login()"> 로그인</button>
-            <button id="login_singup" onclick="login_singup()">회원가입</button>
-          </div>
-        </div>
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="/static/styles/index.css"
+    />
+    <link
+      rel="stylesheet"
+      href="/static/styles/login.css"
+    />
+    <script
+      defer
+      src="/static/scripts/login.js"
+    ></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+  </head>
+  <body>
+    <header>
+      <div id="header_logo">
+        <img
+          src=""
+          alt=""
+        />공감창고
       </div>
-    </ul>
-  </nav>
-</header>
-<article id="indexHtmlmg">
-  <div style="bottom:0;"><img src="/static/img/indeximg.png" alt=""></div>
-  <div>오늘은 <br> 
-  <span style="color: white;">---</span><span style="color: brown; margin:0 0 -80px 0">어떤 내용으로</span><br> 
-  <span style="color: white;">-----</span>사람들을 <br> 
-  <span style="color: white;">---------</span>홀려야 할까?</div>
-</article>
+      <nav>
+        <ul id="navibar">
+          <li><a href="#">음악창구</a></li>
+          <li>
+            <a
+              href="#"
+              id="mideoArea"
+              >영상창구</a
+            >
+          </li>
+          <div id="login_sidebar_box">
+            <input
+              type="checkbox"
+              id="login_sidebar"
+              onclick="return isSign()"
+            />
+            <label
+              for="login_sidebar"
+              class="login_sidebarbtn"
+            >
+              <span class="sign">로그인</span>
+            </label>
+            <div
+              id="sidebar"
+              class="sidebar"
+            >
+              <p>
+                Welcome <br />
+                to <span id="sidebar_logotxt">공감창구</span>
+              </p>
+              <div id="login_box">
+                <input
+                  required
+                  id="login_box_id"
+                  type="text"
+                  placeholder="아이디를 입력해주세요."
+                />
+                <input
+                  required
+                  id="login_box_pw"
+                  type="password"
+                  placeholder="비밀번호를 입력해주세요."
+                />
+                <button
+                  id="login_box_btn"
+                  onclick="signin()"
+                >
+                  로그인
+                </button>
+                <button
+                  id="login_singup"
+                  onclick="login_signup()"
+                >
+                  회원가입
+                </button>
+              </div>
+            </div>
+          </div>
+        </ul>
+      </nav>
+    </header>
+    <article id="indexHtmlmg">
+      <div style="bottom: 0">
+        <img
+          src="/static/img/indeximg.png"
+          alt=""
+        />
+      </div>
+      <div>
+        오늘은 <br />
+        <span style="color: white">---</span
+        ><span style="color: brown; margin: 0 0 -80px 0">어떤 내용으로</span
+        ><br />
+        <span style="color: white">-----</span>사람들을 <br />
+        <span style="color: white">---------</span>홀려야 할까?
+      </div>
+    </article>
 
-<footer>
-<span>Copyright @ 2023</span><span style="color:white">-</span>
-<input type="checkbox" id="footer_easteregg">
-<label for="footer_easteregg" class="login_sidebarbtn"><span style="color:brown"> 진식님 없는 진식팀 </span></label>
-<div class="sidebar2" style="color: white;">
-      <div>김 성 근<hr><img src="/static/img/김성근.jpeg"><hr> <span>tjdzms123@naver.com     <br> (Github) <a target="_blank" href="https://github.com/tjdzms123">tjdzms123</a> <br><br><br>  : 취업에 대한 열망 : <br>즐겁게 일하자</span> </div> 
-      <div>김 재 란<hr><img src="/static/img/김재란.jpg"> <hr> <span>devjaeran@gmail.com     <br> (Github) <a target="_blank" href="https://github.com/gitjaeran">gitjaeran</a> <br> 개발블로그 : <a href="https://velog.io/@ceciliaran">ceciliaran벨로그</a> <br><br>  : 취업에 대한 열망 : <br> 개발하면서 즐겁게 일 하고 싶습니다!</span> </div> 
-      <div>박 영 찬<hr><img src="/static/img/박영찬.JPG"> <hr> <span>b_a_s_e@naver.com       <br> (Github) <a target="_blank" href="https://github.com/19Edwin92">19Edwin92</a> <br> 개발블로그 : <a href="https://velog.io/@edwinstory">Edwin벨로그</a> <br><br>  : 취업에 대한 열망 : <br> 신학전공자의 개발도전기, <br> 취업해서 여행도 가고! <br> 연애도 하고! 결혼까지</span> </div> 
-      <div>엄 진 식<hr><img src="/static/img/엄진식.jpeg"><hr> <span>ladiescheong@naver.com  <br> (Github) <a target="_blank" href="https://github.com/MyungAe">MyungAe</a>     <br> 개발블로그 : <a href="https://github.com/MyungAe">MyungAe티스트리</a> <br><br>  : 취업에 대한 열망 : <br> 대기업 딱 대</span> </div> 
-<a href=""></a>
-
-</div>
-<span style="color:white">-</span>
-<span>All Rights Reserved.</span>
-</footer>
-</body>
+    <footer>
+      <span>Copyright @ 2023</span><span style="color: white">-</span>
+      <input
+        type="checkbox"
+        id="footer_easteregg"
+      />
+      <label
+        for="footer_easteregg"
+        class="login_sidebarbtn"
+        ><span style="color: brown"> 진식님 없는 진식팀 </span></label
+      >
+      <div
+        class="sidebar2"
+        style="color: white"
+      >
+        <div>
+          김 성 근
+          <hr />
+          <img src="/static/img/김성근.jpeg" />
+          <hr />
+          <span
+            >tjdzms123@naver.com <br />
+            (Github)
+            <a
+              target="_blank"
+              href="https://github.com/tjdzms123"
+              >tjdzms123</a
+            >
+            <br /><br /><br />
+            : 취업에 대한 열망 : <br />즐겁게 일하자</span
+          >
+        </div>
+        <div>
+          김 재 란
+          <hr />
+          <img src="/static/img/김재란.jpg" />
+          <hr />
+          <span
+            >devjaeran@gmail.com <br />
+            (Github)
+            <a
+              target="_blank"
+              href="https://github.com/gitjaeran"
+              >gitjaeran</a
+            >
+            <br />
+            개발블로그 :
+            <a href="https://velog.io/@ceciliaran">ceciliaran벨로그</a>
+            <br /><br />
+            : 취업에 대한 열망 : <br />
+            개발하면서 즐겁게 일 하고 싶습니다!</span
+          >
+        </div>
+        <div>
+          박 영 찬
+          <hr />
+          <img src="/static/img/박영찬.JPG" />
+          <hr />
+          <span
+            >b_a_s_e@naver.com <br />
+            (Github)
+            <a
+              target="_blank"
+              href="https://github.com/19Edwin92"
+              >19Edwin92</a
+            >
+            <br />
+            개발블로그 : <a href="https://velog.io/@edwinstory">Edwin벨로그</a>
+            <br /><br />
+            : 취업에 대한 열망 : <br />
+            신학전공자의 개발도전기, <br />
+            취업해서 여행도 가고! <br />
+            연애도 하고! 결혼까지</span
+          >
+        </div>
+        <div>
+          엄 진 식
+          <hr />
+          <img src="/static/img/엄진식.jpeg" />
+          <hr />
+          <span
+            >ladiescheong@naver.com <br />
+            (Github)
+            <a
+              target="_blank"
+              href="https://github.com/MyungAe"
+              >MyungAe</a
+            >
+            <br />
+            개발블로그 :
+            <a href="https://github.com/MyungAe">MyungAe티스트리</a>
+            <br /><br />
+            : 취업에 대한 열망 : <br />
+            대기업 딱 대</span
+          >
+        </div>
+        <a href=""></a>
+      </div>
+      <span style="color: white">-</span>
+      <span>All Rights Reserved.</span>
+    </footer>
+  </body>
 </html>

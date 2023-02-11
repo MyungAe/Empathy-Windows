@@ -1,22 +1,26 @@
 function signup() {
-  let id = document.querySelector('#signup_box_id').value
-  let pw1 = document.querySelector('#signup_box_pw1').value
-  let pw2 = document.querySelector('#signup_box_pw2').value
-  let nick = document.querySelector('#signup_box_nickName').value
-  
-  if(pw1 === pw2) {
-    $.ajax({
-      type:"POST",
-      url:"/account/signup2check",
-      data:{'id_give':id,'pw_give':pw1,'nick_give':nick},
-      success:function(response) {
-        alert(response['msg'])
-        window.close()
-      }
-    })
-  } else {
-    alert("비밀번호가 일치하지 않습니다.")
+  const id = document.querySelector('#signup_box_id').value;
+  const pw = document.querySelector('#signup_box_pw1').value;
+  const pw_doubleCheck = document.querySelector('#signup_box_pw2').value;
+  const nick = document.querySelector('#signup_box_nickName').value;
+
+  // 비밀번호 검증 필요
+  if (pw !== pw_doubleCheck) {
+    alert('비밀번호 중복');
+    return;
   }
 
-
+  $.ajax({
+    type: 'POST',
+    url: '/account/signup',
+    data: {
+      user_id: id,
+      user_password: pw,
+      user_nickname: nick,
+    },
+    success: function (response) {
+      alert(response['msg']);
+      window.close();
+    },
+  });
 }
