@@ -5,7 +5,6 @@ function login_singup() {
       window.open('/account/signup2', 'open', 'width=500, height=300, top ='+top+', left='+left);
 }
 
-
 function signup() {
   let id = document.querySelector('#signup_box_id').value
   let pw1 = document.querySelector('#signup_box_pw1').value
