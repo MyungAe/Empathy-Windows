@@ -9,11 +9,18 @@ from pytz import timezone
 from flask_jwt_extended import create_access_token
 
 ca = certifi.where()
-client = MongoClient('mongodb+srv://project4-Empathy-Windows:Empathy@cluster0.z57zxvu.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
+client = MongoClient(
+    'mongodb+srv://project4-Empathy-Windows:Empathy@cluster0.z57zxvu.mongodb.net/?retryWrites=true&w=majority',
+    tlsCAFile=ca)
 db = client.empathy
 
 # app.py : app.register_blueprint(auth.account)
 account = Blueprint('auth', __name__, url_prefix="/account/")
+
+
+@account.route('/', methods=["GET"])
+def account_signup():
+    return render_template('signup.html')
 
 
 @account.route('/signin', methods=["POST"])
@@ -49,7 +56,11 @@ def signin():
     # JWT
     access_token = create_access_token(identity=user_id)
 
-    return jsonify({'msg': '로그인이 성공했습니다.', 'access_token': access_token}), 200
+    return jsonify({
+        'msg': '로그인이 성공했습니다.',
+        'user_nickname': user_account['nickname'],
+        'access_token': access_token
+    }), 200
 
 
 @account.route("/signup", methods=["POST"])
