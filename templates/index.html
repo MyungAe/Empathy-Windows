@@ -5,8 +5,10 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
-  <link rel="stylesheet" href="/static/index.css">
-</head>
+  <link rel="stylesheet" href="/static/styles/index.css">
+  <link rel="stylesheet" href="/static/styles/login.css">
+  <script defer src="/static/scripts/login.js"></script>
+</head> 
 <body>
 <header>
   <div id="header_logo"><img src="" alt="">페이지이름</div>
@@ -17,7 +19,15 @@
       <div id="login_sidebar_box">
         <input type="checkbox" id="login_sidebar">
         <label for="login_sidebar" class="login_sidebarbtn"><span>로그인</span></label>
-        <div class="sidebar" style="color: white;"></div>
+        <div id="sidebar" class="sidebar">
+          <p>Welcome <br> to <span>진식님 없는 진식팀</span> </p>
+          <div id="login_box">
+            <input required id="login_box_idpw" type="text" id="login_id" placeholder="아이디를 입력해주세요.">
+            <input required id="login_box_idpw" type="password" id="login_pw" placeholder="비밀번호를 입력해주세요.">
+            <button id="login_box_btn"> 로그인</button>
+            <button id="login_singup" onclick="login_singup()">회원가입</button>
+          </div>
+        </div>
       </div>
     </ul>
   </nav>

@@ -1,0 +1,68 @@
+/* fontPart, start */
+@font-face {
+  font-family: 'Humanbumsuk';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
+/* fontPart, end */
+
+div[id="sidebar"] p {
+  font-size: 30px;
+  text-align: center;
+}
+
+div[id="sidebar"] span {
+  color: brown;
+  font-weight: 700;
+}
+
+div[id="login_box"] {
+  width: 280px;
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+input[ id="login_box_idpw"] {
+  display: block;
+  width: 195px;
+  height: 40px;
+  margin-bottom: 5px;
+  border: 1px solid white;
+  background-color: white;
+  border-radius: 15px;
+  padding: 5px 10px 5px 10px;
+  font-size: 18px;
+  font-family: 'Humanbumsuk';
+}
+
+button[id="login_box_btn"] {
+  display: block;
+  width: 220px;
+  height: 40px;
+  border: none;
+  font-size: 18px;
+  border-radius: 15px;
+  margin-top: 20px;
+  border: 1px solid white;
+  background-color: white;
+  font-family: 'Humanbumsuk';
+}
+
+button[id="login_singup"] {
+  margin-top: 15px;
+  font-family: 'Humanbumsuk';
+  color: white;
+  background-color: transparent;
+  border: none;
+  font-size: 18px;
+}
+
+button[id="login_singup"]:hover {
+  cursor: pointer;
+  font-weight: 600;
+}
