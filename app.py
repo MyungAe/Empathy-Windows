@@ -4,15 +4,15 @@ app = Flask(__name__)
 from pymongo import MongoClient
 import certifi
 ca = certifi.where()
-client = MongoClient('mongodb+srv://project4-Empathy-Windows:Empathy@cluster0.z57zxvu.mongodb.net/cluster0?retryWrites=true&w=majority',tlsCAFile=ca)
+client = MongoClient('mongodb+srv://project4-Empathy-Windows:Empathy@cluster0.z57zxvu.mongodb.net/?retryWrites=true&w=majority',tlsCAFile=ca)
 db = client.empathy
 
 
-@app.route('/')
-def home():
+@app.route('/music')
+def music():
     return render_template('index.html')
 
-
+# 댓글 저장
 @app.route("/music/comment", methods=["POST"])
 def comment_post():
     comment_receive = request.form['comment_give']
@@ -30,33 +30,30 @@ def comment_post():
     # for 음악목록 in 음악목록들:
     #     music_name  = 회원정보['music_name ']
 
-    # dfdfd
-
     doc = {
-        # 'nickname' : nickname,
+        'nickname': 'ksg',
         'num': count,
         'comment': comment_receive,
         'date': date_receive,
-        # 'music_name' : music_name,
+        'music_name': 'human',
     }
 
     db.comments.insert_one(doc)
 
     return jsonify({'msg': '등록 완료!!!'})
 
+# 댓글 조회
 @app.route("/music/comment", methods=["GET"])
-def bucket_get():
+def comment_get():
     comment_list = list(db.comments.find({}, {'_id': False}))
 
     return jsonify({'comments': comment_list})
 
+# 댓글 삭제
 @app.route("/music/comment", methods=["DELETE"])
-def movie_de():
-    title_receive = request.form['title_give']
-
-    db.movies2.delete_one({'title': title_receive})
-
-
+def comment_de():
+    num_receive = request.form['num_give']
+    db.comments.delete_one({'num': num_receive})
     return jsonify({'msg':'삭제 완료!!'})
 
 if __name__ == '__main__':

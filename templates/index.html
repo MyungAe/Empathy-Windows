@@ -39,7 +39,24 @@
             font-size: 30px;
         }
 
-        .mybox {
+        .mycommentbox {
+            width: 95%;
+            max-width: 700px;
+            padding: 20px;
+            box-shadow: 0px 0px 10px 0px lightblue;
+            margin: 20px auto;
+
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .mycommentbox > input {
+            width: 70%;
+        }
+
+        .mycommentcards {
             width: 95%;
             max-width: 700px;
             padding: 20px;
@@ -47,15 +64,21 @@
             margin: 20px auto;
         }
 
-        .mybucket {
+        .commentcard {
+            margin-bottom: 10px;
+
+            border: 0.5px solid gray;
+        }
+
+        .card-header {
             display: flex;
             flex-direction: row;
             align-items: center;
             justify-content: space-between;
         }
 
-        .mybucket > input {
-            width: 70%;
+        .card-body {
+            border-top: 0.5px solid gray;
         }
     </style>
 
@@ -76,7 +99,7 @@
 
             $.ajax({
                 type: "POST",
-                url: "/comment",
+                url: "/music/comment",
                 data: {comment_give: comment, date_give: fullDate},
                 success: function (response) {
                     alert(response["msg"])
@@ -97,16 +120,19 @@
                         let num = rows[i]['num']
                         let comment = rows[i]['comment']
                         let date = rows[i]['date']
-                        let music_name = rows[i]['music_name']
 
-                        let temp_html = `<div class="card">
+                        let temp_html = `<div class="commentcard" >
                                             <div class="card-header">
-                                                Quote
+                                                <p>${date}</p>
+                                                 <div class="card-header-btns">
+                                                    <button>수정하기</button>
+                                                    <button onclick="del_comment(${num})">삭제하기</button>
+                                                </div>
                                             </div>
                                             <div class="card-body">
                                                 <blockquote class="blockquote mb-0">
-                                                    <p>A well-known quote, contained in a blockquote element.</p>
-                                                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
+                                                    <p>${num}- ${comment}</p>
+                                                    <footer class="blockquote-footer">${nickname}</cite>
                                                     </footer>
                                                 </blockquote>
                                             </div>
@@ -116,31 +142,29 @@
                 }
             });
         }
+
+        function del_comment(num) {
+            $.ajax({
+                type: 'DELETE',
+                url: '/music/comment',
+                data: {num_give: num},
+                success: function (response) {
+                    alert(response['msg'])
+                    console.log($(num))
+                }
+            });
+        }
     </script>
 </head>
 <body>
-    <div class="mypic">
-        <h1>나의 버킷리스트</h1>
-    </div>
-    <div class="mybox">
-        <div class="mybucket">
-            <input id="comment" class="form-control" type="text" placeholder="댓글을 남겨주세요">
-            <button onclick="save_comment()" type="button" class="btn btn-outline-primary">댓글달기</button>
-        </div>
-    </div>
-    <div class="mybox" id="comment-list">
-        <div class="card">
-            <div class="card-header">
-                Quote
-            </div>
-            <div class="card-body">
-                <blockquote class="blockquote mb-0">
-                    <p>A well-known quote, contained in a blockquote element.</p>
-                    <footer class="blockquote-footer">Someone famous in <cite title="Source Title">Source Title</cite>
-                    </footer>
-                </blockquote>
-            </div>
-        </div>
-    </div>
+<div class="mypic">
+    <h1>나의 버킷리스트</h1>
+</div>
+<div class="mycommentbox">
+    <input id="comment" class="form-control" type="text" placeholder="댓글을 남겨주세요">
+    <button onclick="save_comment()" type="button" class="btn btn-outline-primary">댓글달기</button>
+</div>
+<div class="mycommentcards" id="comment-list">
+</div>
 </body>
 </html>
