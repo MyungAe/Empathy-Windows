@@ -27,7 +27,7 @@ div[id="login_box"] {
 }
 
 
-input[ id="login_box_idpw"] {
+input[ id="login_box_id"], input[ id="login_box_pw"] {
   display: block;
   width: 195px;
   height: 40px;
