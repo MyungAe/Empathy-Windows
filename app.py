@@ -74,11 +74,11 @@ for musicList in musicLists:
             'singer' : singer,
             'title' : title
         }
-        db.music.insert_one(doc)
+        user_db.music.insert_one(doc)
     
 @app.route("/music", methods=["GET"])
 def music_get():
-    musicList = list(db.music.find({}, {'_id': False}))
+    musicList = list(user_db.music.find({}, {'_id': False}))
 
     return jsonify({'music' : musicList[:20]})
 
