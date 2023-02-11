@@ -4,8 +4,9 @@ from pymongo import MongoClient
 import certifi
 
 from werkzeug.security import generate_password_hash, check_password_hash
-import jwt, datetime
-from pytz import timezone, utc
+import datetime
+from pytz import timezone
+from flask_jwt_extended import create_access_token
 
 ca = certifi.where()
 client = MongoClient('mongodb+srv://project4-Empathy-Windows:Empathy@cluster0.z57zxvu.mongodb.net/?retryWrites=true&w=majority', tlsCAFile=ca)
@@ -42,25 +43,13 @@ def signin():
     utc_time = datetime.datetime.utcnow()
     kst_time = kst.localize(utc_time)
 
-    print(utc_time, kst_time)
+    # print(utc_time, kst_time)
+    # print(kst_time + datetime.timedelta(minutes=60))
 
     # JWT
-    # header = {
-    #     'typ': 'JWT',
-    #     'alg': 'HS512'
-    # }
-    # payload = {
-    #     'iss': 'Empathy-Windows',
-    #     'aud': user_id,
-    #     'exp': datetime.datetime.now(tz=datetime.timezone.utc),
-    #     'iat': datetime.datetime.now(tz=datetime.timezone.utc) + datetime.timedelta(minutes=60),
-    # }
-    #
-    # secret = 'secret'
-    #
-    # print(header, payload, secret)
+    access_token = create_access_token(identity=user_id)
 
-    return jsonify({'msg': '로그인이 성공했습니다.'})
+    return jsonify({'msg': '로그인이 성공했습니다.', 'access_token': access_token}), 200
 
 
 @account.route("/signup", methods=["POST"])
@@ -87,4 +76,4 @@ def signup():
 
     db.sample_account.insert_one(user_account)
 
-    return jsonify({'msg': '회원가입 요청이 정상적으로 처리되었습니다.'})
+    return jsonify({'msg': '회원가입 요청이 정상적으로 처리되었습니다.'}), 200
