@@ -32,13 +32,19 @@ function login() {
     let id = document.querySelector('#login_box_id').value
     let pw = document.querySelector('#login_box_pw').value
     
-    $.ajax({
-      type:"POST",
-      url:"/account/signin2",
-      data:{"id_give":id, "pw_give":pw},
-      success: function(response) {
-        alert(response['msg'])
-      }
-    })
-
+    if(id === "" || pw === "") {
+      alert("아이디 또는 비밀번호가 입력되지 않았습니다.")
+      return
+    } else {
+      $.ajax({
+        type:"POST",
+        url:"/account/signin2",
+        data:{"id_give":id, "pw_give":pw},
+        success: function(response) {
+          alert(response['msg'])
+        }
+      })
+    }
+    document.querySelector('#login_sidebar').checked = false;
+      
 }
