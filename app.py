@@ -356,4 +356,3 @@ if __name__ == '__main__':
 #     print(comment_receive)
 #     db.comments.update_one({'name': 'Mercedes Tyler'}, {'$set': {'text': comment_receive}})
 #     return jsonify({'msg': '수정되었습니다!'})
->>>>>>> 5b398f27541e7c83c1529e0b24286a8d47041592
