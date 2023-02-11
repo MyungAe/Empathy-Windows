@@ -9,7 +9,7 @@ $(document).ready(() => {
   const signin = document.querySelector('.sign');
 
   if (nickname) {
-    signin.innerText = `${nickname} 님 | 로그아웃`;
+    signin.innerText = `${nickname} 님`;
     return;
   }
   if (!nickname) {
