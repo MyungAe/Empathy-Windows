@@ -9,7 +9,19 @@ $(document).ready(() => {
   const signin = document.querySelector('.sign');
 
   if (nickname) {
-    signin.innerText = `${nickname} 님`;
+    signin.innerText = `${nickname}님`;
+
+    const logout_tag = `<li style="margin-left: 10px;">
+                          <a
+                            href="#"
+                            id="mideoArea"
+                            onclick="signout()"
+                          >
+                            로그아웃
+                          </a>
+                        </li>`;
+
+    $('#navibar').append(logout_tag);
     return;
   }
   if (!nickname) {
@@ -28,6 +40,11 @@ function isSign() {
     // checkbox = False : 사이드바 안나와야됨
     return false;
   }
+}
+
+function signout() {
+  localStorage.clear();
+  window.location.reload();
 }
 
 function login_signup() {
