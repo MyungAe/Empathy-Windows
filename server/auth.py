@@ -27,11 +27,11 @@ def account_signup():
 def signin():
     user_id = request.form['user_id']
     user_password = request.form['user_password']
-    # print(user_id, user_password)
+    print(user_id, user_password)
 
     # 검증
     user_account = db.sample_account.find_one({'id': user_id}, {'_id': False})
-    # print(user_account)
+    print(user_account)
     if not user_account:
         return jsonify({'msg': '아이디가 잘못되었습니다.'})
 
@@ -41,7 +41,7 @@ def signin():
     hashed_password = method + '$' + salt + '$' + hashed_value
 
     is_login = check_password_hash(hashed_password, user_password)
-    # print(is_login)
+    print(is_login)
 
     if not is_login:
         return jsonify({'msg': '비밀번호가 잘못되었습니다.'})
@@ -50,11 +50,12 @@ def signin():
     utc_time = datetime.datetime.utcnow()
     kst_time = kst.localize(utc_time)
 
-    # print(utc_time, kst_time)
-    # print(kst_time + datetime.timedelta(minutes=60))
+    print(utc_time, kst_time)
+    print(kst_time + datetime.timedelta(minutes=60))
 
     # JWT
     access_token = create_access_token(identity=user_id)
+    print(access_token)
 
     return jsonify({
         'msg': '로그인이 성공했습니다.',

@@ -1,19 +1,34 @@
-// let login = document.querySelector("#login")
+// input[id='login_sidebar']:checked + label + div {
+//   right: 0;
+// }
 
 $(document).ready(() => {
+  // const input = document.querySelector
+
   const nickname = localStorage.getItem('nickname');
+  const signin = document.querySelector('.sign');
+
   if (nickname) {
-    const signin = document.querySelector('.sign');
     signin.innerText = `${nickname} 님 | 로그아웃`;
     return;
   }
-
   if (!nickname) {
-    const signin = document.querySelector('.sign');
     signin.innerText = `로그인`;
     return;
   }
 });
+
+function isSign() {
+  const username = localStorage.getItem('nickname');
+
+  if (!username) {
+    // checkbox = True : 사이드바 나와야됨
+    return true;
+  } else {
+    // checkbox = False : 사이드바 안나와야됨
+    return false;
+  }
+}
 
 function login_signup() {
   let top = (screen.height - 300) / 2;
@@ -23,32 +38,6 @@ function login_signup() {
     'open',
     'width=500, height=300, top =' + top + ', left=' + left
   );
-}
-
-function signup() {
-  const id = document.querySelector('#signup_box_id').value;
-  const pw = document.querySelector('#signup_box_pw1').value;
-  const pw_doubleCheck = document.querySelector('#signup_box_pw2').value;
-  const nick = document.querySelector('#signup_box_nickName').value;
-
-  // 비밀번호 검증 필요
-  if (pw !== pw_doubleCheck) {
-    alert('비밀번호 중복');
-    return;
-  }
-
-  $.ajax({
-    type: 'POST',
-    url: '/account/signup',
-    data: {
-      user_id: id,
-      user_password: pw1,
-      user_nickname: nick,
-    },
-    success: function (response) {
-      alert(response['msg']);
-    },
-  });
 }
 
 function signin() {
