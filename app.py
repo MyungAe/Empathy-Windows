@@ -134,8 +134,9 @@ def comment_get():
 @app.route("/music/comment", methods=["PATCH"])
 def comment_update():
     comment_receive = request.form["comment_give"]
-    print(comment_receive)
-    user_db.comments.update_one({'name': 'Mercedes Tyler'}, {'$set': {'text': comment_receive}})
+    comment_num_receive = request.form['num_give']
+    print(type(comment_num_receive))
+    user_db.comments.update_one({'num': int(comment_num_receive)}, {'$set': {'comment': comment_receive}})
     return jsonify({'msg': '수정되었습니다!'})
 
 
