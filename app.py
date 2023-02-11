@@ -30,6 +30,8 @@ def comment_post():
     # for 음악목록 in 음악목록들:
     #     music_name  = 회원정보['music_name ']
 
+    # dfdfd
+
     doc = {
         # 'nickname' : nickname,
         'num': count,
