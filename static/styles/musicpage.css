@@ -1,0 +1,50 @@
+#musicpageArticle {
+    width: auto;
+    height: auto;
+    background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+}
+
+#musicBox {
+    width: auto;
+    height: auto;
+    background-color: lightpink;
+    
+    display: flex;
+    flex-direction: column;
+
+    margin-bottom: 50px;
+}
+
+#musicList {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#musicListData {
+    display: flex;
+    flex-direction: column;
+}
+
+#musicHtml {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+#commentBox {
+    width: auto;
+    height: auto;
+    background-color: rgba(128, 128, 128, 0.419);
+
+    display: flex;
+    flex-direction: column;
+}
+
+#commentInfo {
+    display: flex;
+}
+
+#commentLeft {
+    margin-right: 50px;
+}
