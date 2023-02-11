@@ -22,6 +22,16 @@
     justify-content: space-evenly;
 }
 
+#musicListData {
+    display: flex;
+    flex-direction: column;
+}
+
+#musicHtml {
+    display: flex;
+    justify-content: space-evenly;
+}
+
 #commentBox {
     width: auto;
     height: auto;

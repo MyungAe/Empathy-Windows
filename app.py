@@ -7,7 +7,7 @@ import requests
 from bs4 import BeautifulSoup
 
 headers = {'User-Agent' : 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)AppleWebKit/537.36 (KHTML, like Gecko) Chrome/73.0.3683.86 Safari/537.36'}
-data = requests.get('https://www.melon.com/chart/index.htm',headers=headers)
+data = requests.get('https://www.genie.co.kr/chart/top200',headers=headers)
 
 soup = BeautifulSoup(data.text, 'html.parser')
 
@@ -25,27 +25,25 @@ def home():
     return render_template('musicpage.html')
 
 #보여주기
-# title = soup.select_one('#lst50 > td:nth-child(6) > div > div > div.ellipsis.rank01 > span > a')
-# print(title.text)
-
-# singer = soup.select_one('#lst50 > td:nth-child(6) > div > div > div.ellipsis.rank02 > a')
-# print(singer.text)
-
-# rank = soup.select_one('#lst50 > td:nth-child(2) > div > span.rank')
-# print(rank.text)
-
-musicLists = soup.select('#lst50 > td')
-
+musicLists = soup.select('#body-content > div.newest-list > div > table > tbody > tr')
 for musicList in musicLists:
-    a = musicList.select_one('td:nth-child(6) > div > div > div.ellipsis.rank01 > span > a')
-    print(a.text)
+    a = musicList.select_one('td.info > a.title.ellipsis').text.strip().lstrip()
+    if a is not None:
+        rank = musicList.select_one('td.number').text[0:2].strip()
+        singer = musicList.select_one('td.info > a.artist.ellipsis').text
+        title = a
+        doc = {
+            'rank' : rank,
+            'singer' : singer,
+            'title' : title
+        }
+        db.music.insert_one(doc)
     
-# @app.route("/music", methods=["GET"])
-# def music_get():
-#     musicList = list(db.music.find({}, {'_id': False}))
-#     commentList = list(db.music.find({}, {'_id': False}))
+@app.route("/music", methods=["GET"])
+def music_get():
+    musicList = list(db.music.find({}, {'_id': False}))
 
-#     return jsonify({"musicList" : musicList}, {"commentList" : commentList})
+    return jsonify({'music' : musicList[:20]})
 
 #수정하기
 @app.route("/music/comment/", methods=["FATCH"])
