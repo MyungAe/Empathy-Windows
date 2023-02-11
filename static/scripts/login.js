@@ -19,6 +19,7 @@ function signup() {
       data:{'id_give':id,'pw_give':pw1,'nick_give':nick},
       success:function(response) {
         alert(response['msg'])
+        window.close()
       }
     })
   } else {
