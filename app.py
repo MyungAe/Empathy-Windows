@@ -79,20 +79,19 @@ def comment_post():
     comment_list = list(user_db.comments.find({}, {'_id': False}))
     count = len(comment_list) + 1
 
-    # 회원정보들 = list(db.'회원정보들'.find({}, {'_id': False}))
-    # for 회원정보 in 회원정보들:
-    #     nickname = 회원정보['nickname']
-    #
-    # 음악목록들 = list(db.'음악목록들'.find({}, {'_id': False}))
-    # for 음악목록 in 음악목록들:
-    #     music_name  = 회원정보['music_name ']
+    nicknames = list(user_db.empathy.find({}, {'_id': False}))
+    for a in nicknames:
+        nickname = a['nick']
 
+    musics = list(user_db.music.find({}, {'_id': False}))
+    for b in musics:
+        music_name = b['title']
     doc = {
-        'nickname': 'ksg',
+        'nickname': nickname,
         'num': count,
         'comment': comment_receive,
         'date': date_receive,
-        'music_name': 'human',
+        'music_name': music_name,
     }
 
     user_db.comments.insert_one(doc)
