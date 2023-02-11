@@ -18,10 +18,18 @@ function show_music() {
                 let singer = rows[i]['singer']
                 let title = rows[i]['title']
 
-                let temp_html = `<div id="musicHtml">
-                                    <div>${rank}</div>
-                                    <div>${singer}</div>
-                                    <div>${title}</div>
+                let temp_html = `<div class="container">
+                                  <div class="row">
+                                    <div class="col">
+                                      ${rank}
+                                    </div>
+                                    <div class="col">
+                                      ${singer}
+                                    </div>
+                                    <div class="col">
+                                      ${title}
+                                    </div>
+                                  </div>
                                 </div>`
                 $('#musicListData').append(temp_html)
             }
@@ -66,19 +74,19 @@ function show_comment() {
                 let comment = rows[i]['comment']
                 let date = rows[i]['date']
 
-                let temp_html = `<div class="commentcard" >
+                let temp_html = `<div id="commentcard">
                                     <div class="card-header">
                                         <p>${date}</p>
-                                         <div class="card-header-btns">
-                                            <button onclick="commentPatch()">수정하기</button>
-                                            <button onclick="del_comment(${num})">삭제하기</button>
-                                        </div>
                                     </div>
-                                    <div class="card-body">
+                                    <div id="card-body">
                                         <blockquote class="blockquote mb-0">
                                             <p>${num}- ${comment}</p>
                                             <footer class="blockquote-footer">${nickname}</cite>
                                             </footer>
+                                            <div id="card-header-btns">
+                                                <button onclick="commentPatch()">수정하기</button>
+                                                <button onclick="del_comment(${num})">삭제하기</button>
+                                            </div>
                                         </blockquote>
                                     </div>
                                 </div>`
@@ -87,6 +95,11 @@ function show_comment() {
         }
     });
 }
+
+
+
+
+
 
 //댓글 수정
 function commentPatch() {
