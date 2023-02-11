@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -20,10 +21,44 @@
     <link rel="stylesheet" href="/static/styles/login.css">
     <script defer src="/static/scripts/login.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      http-equiv="X-UA-Compatible"
+      content="IE=edge"
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+
+    <!-- CDN -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- CSS -->
+    <link
+      rel="stylesheet"
+      href="/static/styles/musicpage.css"
+    />
+
+
     <title>공감창구</title>
-</head>
-<body>
-<!-- navbar -->
+  </head>
+  <body>
+    <!-- navbar -->
+
 
 <header>
     <div id="header_logo"><img src="" alt="">공감창고</div>
@@ -53,12 +88,19 @@
     <!-- Music List -->
     <div id="musicBox">
         <div>Music List</div>
+
+    <article id="musicpageArticle">
+      <!-- Music List -->
+      <div id="musicBox">
+        <div id="musicListTitle">Music List</div>
+
         <div id="musicList">
-            <div id="ranking">순위</div>
-            <div id="singer">가수</div>
-            <div id="musictitle">제목</div>
+          <div id="ranking">순위</div>
+          <div id="singer">가수</div>
+          <div id="musictitle">제목</div>
         </div>
         <div id="musicListData"></div>
+
     </div>
     </div>
 
@@ -80,15 +122,50 @@
                         </button>
                     </div>
                 </form>
+
+      </div>
+
+      <!-- Comment -->
+      <div id="commentBox">
+        <div id="commentTitle">Comment</div>
+        <div id="commentContents">
+          <div id="commentInfo">
+            <div id="commentLeft">
+              <div>닉네임</div>
+              <div>날짜</div>
+              <div>music title</div>
+ 
             </div>
+            <form>
+              <div id="commentInput">
+                <textarea
+                  name=""
+                  id="comment"
+                  cols="100"
+                  rows="5"
+                  placeholder="댓글을 달아보세요!"
+                ></textarea>
+                <button
+                  onclick="save_comment()"
+                  type="button"
+                  class="btn btn-outline-primary"
+                >
+                  댓글달기
+                </button>
+              </div>
+            </form>
+          </div>
         </div>
 
         <!-- GET -READ -->
-        <div class="mycommentcards" id="comment-list">
-        </div>
-    </div>
-</article>
+        <div
+          class="mycommentcards"
+          id="comment-list"
+        ></div>
+      </div>
+    </article>
 
+ 
 <!-- Footer -->
 <footer>
     <span>Copyright @ 2023</span><span style="color:white">-</span>
@@ -132,4 +209,10 @@
 </footer>
 <script src="/static/scripts/musicpage.js"></script>
 </body>
+
+    <!-- Footer -->
+
+    <script src="/static/scripts/musicpage.js"></script>
+  </body>
+ 
 </html>

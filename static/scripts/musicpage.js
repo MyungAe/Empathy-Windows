@@ -77,6 +77,13 @@ function show_comment() {
                 let temp_html = `<div id="commentcard">
                                     <div class="card-header">
                                         <p>${date}</p>
+
+
+                                         <div class="card-header-btns">
+                                            <button onclick="commentPatch(${num})" class="btn btn-outline-success">수정하기</button>
+                                            <button onclick="del_comment(${num})" class="btn btn-outline-danger">삭제하기</button>
+                                        </div>
+
                                     </div>
                                     <div id="card-body">
                                         <blockquote class="blockquote mb-0">
@@ -102,15 +109,16 @@ function show_comment() {
 
 
 //댓글 수정
-function commentPatch() {
+function commentPatch(num) {
     let update = prompt('수정사항을 입력해주세요.')
-    alert(update)
+    console.log(num)
     $.ajax({
         type: "PATCH",
         url: "/music/comment",
-        data: {comment_give: update},
+        data: {comment_give: update, num_give : num},
         success: function (response) {
             console.log(response["msg"])
+            window.location.reload()
         }
     });
 }
