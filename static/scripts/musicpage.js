@@ -81,7 +81,7 @@ function show_comment() {
                                     <div id="card-body">
                                         <blockquote class="blockquote mb-0">
                                             <p>${num}- ${comment}</p>
-                                            <footer class="blockquote-footer">${nickname}</cite>
+                                            <footer class="blockquote-footer" style="color: white">${nickname}</cite>
                                             </footer>
                                             <div id="card-header-btns">
                                                 <button onclick="commentPatch()">수정하기</button>

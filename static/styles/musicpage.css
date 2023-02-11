@@ -1,4 +1,9 @@
-
+@font-face {
+  font-family: 'Humanbumsuk';
+  src: url('https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_2210-2@1.0/Humanbumsuk.woff2') format('woff2');
+  font-weight: normal;
+  font-style: normal;
+}
 #musicpageArticle {
     width: auto;
     height: auto;
@@ -10,12 +15,19 @@
 #musicBox {
     width: auto;
     height: auto;
-    background-color: lightpink;
+
 
     display: flex;
     flex-direction: column;
 
     margin-bottom: 50px;
+
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://www.urbanbrush.net/web/wp-content/uploads/edd/2019/03/urbanbrush-20190327025230681370.png');
+    background-position: center;
+    background-size: cover;
+
+    color: white;
+    font-family: 'Humanbumsuk';
 }
 
 #musicList {
@@ -37,6 +49,14 @@
     width: auto;
     height: auto;
     background-color: rgba(128, 128, 128, 0.419);
+
+    background-image: linear-gradient(0deg, rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://cdn.pixabay.com/photo/2018/12/21/20/17/instrument-3888684__340.png');
+    background-position: center;
+    background-size: cover;
+
+    color: white;
+
+    font-family: 'Humanbumsuk';
 }
 
 #commentInfo {
@@ -51,7 +71,7 @@
 }
 
 #card-header-btns {
-    margin-left: 1650px;
+    margin-left: 1700px;
 }
 
 #card-body {
@@ -65,4 +85,12 @@
 #commentbigbox {
     margin-auto: auto;
     background-color: black;
+}
+
+#commentbtn {
+    margin-bottom: 33px;
+}
+
+article {
+    margin-top: 45px;
 }
